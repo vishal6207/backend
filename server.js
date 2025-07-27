@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 const cors = require("cors");
+const vendorRoutes = require("./routes/vendor");
+const { connectToWhatsApp } = require("./whatsappClient");
+
 
 dotenv.config();
 const app = express();
@@ -16,5 +19,8 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/api/auth", authRoutes);
+app.use("/api/vendor", vendorRoutes);
+
+connectToWhatsApp(); 
 
 app.listen(5000, () => console.log("Server running on port 5000"));
