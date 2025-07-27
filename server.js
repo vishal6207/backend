@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const authRoutes = require("./routes/auth");
 const cors = require("cors");
 const vendorRoutes = require("./routes/vendor");
+const messageRoutes = require("./routes/massage")
 const { connectToWhatsApp } = require("./whatsappClient");
 
 
