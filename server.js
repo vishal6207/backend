@@ -20,6 +20,7 @@ mongoose
 
 app.use("/api/auth", authRoutes);
 app.use("/api/vendor", vendorRoutes);
+app.use("/api/message", messageRoutes);
 
 connectToWhatsApp(); 
 
